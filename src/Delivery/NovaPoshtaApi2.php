@@ -753,18 +753,18 @@ class NovaPoshtaApi2 {
 	protected function checkInternetDocumentRecipient(array & $counterparty) {
 		// Check required fields
 		if ( ! $counterparty['FirstName'])
-			throw new \Exception('FirstName is required filed for recipient');
+			throw new \Exception('FirstName is required field for recipient');
 		// MiddleName realy is not required field, but manual says otherwise 
 		// if ( ! $counterparty['MiddleName'])
 			// throw new \Exception('MiddleName is required filed for sender and recipient');
 		if ( ! $counterparty['LastName'])
-			throw new \Exception('LastName is required filed for recipient');
+			throw new \Exception('LastName is required field for recipient');
 		if ( ! $counterparty['Phone'])
-			throw new \Exception('Phone is required filed for recipient');
-		if ( ! ($counterparty['City'] OR $counterparty['CityRef']))
-			throw new \Exception('City is required filed for recipient');
-		if ( ! ($counterparty['Region'] OR $counterparty['CityRef']))
-			throw new \Exception('Region is required filed for recipient');
+			throw new \Exception('Phone is required field for recipient');
+		if ( ! ($counterparty['City'] OR $counterparty['CityRecipient']))
+			throw new \Exception('City is required field for recipient');
+		if ( ! ($counterparty['Region'] OR $counterparty['CityRecipient']))
+			throw new \Exception('Region is required field for recipient');
 	
 		// Set defaults
 		if ( ! $counterparty['CounterpartyType']) {
